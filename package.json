@@ -1,7 +1,7 @@
 {
-  "name": "devconnector",
-  "version": "1.0.0",
-  "description": "Social network for developers",
+  "name": "gstCalculator",
+  "version": "1.0",
+  "description": "gstCalculator",
   "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
@@ -11,20 +11,14 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "author": "Brad Traversy",
-  "license": "MIT",
+  "author": "Amanjeet Singh",
+  "license": "ASG",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "concurrently": "^3.5.1",
     "express": "^4.16.3",
-    "gravatar": "^1.6.0",
-    "jsonwebtoken": "^8.2.0",
     "mongoose": "^5.0.12",
-    "passport": "^0.4.0",
-    "passport-jwt": "^4.0.0",
-    "request": "^2.88.0",
-    "validator": "^9.4.1"
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "nodemon": "^1.17.3"

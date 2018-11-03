@@ -8,8 +8,6 @@ const mongoose = require('mongoose');
 const Trust = require('../../models/Trust');
 
 // @route   POST api/resume/submit
-// @desc    Create users loan
-// @access  Private
 router.post('/submit',(req,res)=>{
   console.log("submited data",req.body);
   const dataFields ={};
@@ -27,7 +25,7 @@ router.post('/submit',(req,res)=>{
       res.json({dataFields})
     })
     .catch(err => {
-      console.log("error in Loan Required raised",err);
+      console.log("error while saving data",err);
       res.json({x:"failed"});
      });
    }
@@ -40,17 +38,15 @@ router.post('/submit',(req,res)=>{
 
 
 // @route   GET api/resume/all
-// @desc    user asking loan
-// @access  Private
 router.get('/all',(req,res)=>{
     Trust.find().then(trust =>{
       if(!trust){
         let eror ={}
-        eror.name = "No loans you have asked"
+        eror.name = "Get All error"
         res.json(eror);
       }
       else{
-        console.log("/loans/all Raised user",trust);
+        console.log("Get All Success",trust);
         res.json(trust);
       }
 
